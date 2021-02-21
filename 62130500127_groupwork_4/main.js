@@ -97,8 +97,7 @@ const app = {
     search(searching){
       // console.log(searching)
       this.thumbnails.forEach(thumbnail => {
-        let name = thumbnail.name.toLowerCase();
-        if (name.includes(searching.toLowerCase())) {
+        if (thumbnail.name.toLowerCase().includes(searching.toLowerCase())) {
           thumbnail.isShow = true;
         }else{
           thumbnail.isShow = false;
@@ -110,6 +109,9 @@ const app = {
       this.isShowPreview = true;
       this.previewSrc = thumbnail.src;
     }
+  },
+  beforeUpdate() {
+    this.search(this.searching);
   },
 };
 Vue.createApp(app).mount("#app");
