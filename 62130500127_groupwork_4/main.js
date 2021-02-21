@@ -60,28 +60,28 @@ const app = {
           isShow: true
         },
         {
-          name: "B Pic",
+          name: "C Pic",
           src: "images/1.jpg",
           like: 228,
           toggle: false,
           isShow: true
         },
         {
-          name: "B Pic",
+          name: "C Pic",
           src: "images/1.jpg",
           like: 299,
           toggle: false,
           isShow: true
         },
         {
-          name: "B Pic",
+          name: "C Pic",
           src: "images/1.jpg",
           like: 9999,
           toggle: false,
           isShow: true
         },
         {
-          name: "B Pic",
+          name: "D Pic",
           src: "images/1.jpg",
           like: 123456,
           toggle: true,
@@ -90,19 +90,27 @@ const app = {
       ],
       searching: "",
       isShowPreview: false,
-      previewSrc: ""
+      previewSrc: "",
+      isNoPhoto: false
     };
   },
   methods: {
     search(searching){
       // console.log(searching)
+      let photoAmout = this.thumbnails.length;
+      let i = 0;
       this.thumbnails.forEach(thumbnail => {
         if (thumbnail.name.toLowerCase().includes(searching.toLowerCase())) {
           thumbnail.isShow = true;
+          this.isNoPhoto = false;
         }else{
           thumbnail.isShow = false;
+          i++;
         }
       });
+      if (photoAmout == i) {
+        this.isNoPhoto = true;
+      }
 
     },
     show(thumbnail){
