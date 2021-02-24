@@ -87,7 +87,7 @@ const app = Vue.createApp({
           isShow: true
         },
       ],
-      searching: "",
+      // searching: "",
       isShowPreview: false,
       previewSrc: "",
       isNoPhoto: false

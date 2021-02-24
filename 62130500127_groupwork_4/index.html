@@ -25,21 +25,9 @@
 <body class="bg-gray"> 
   <div id="app">
 
-    <!-- search bar -->
-    <div class="m-8 w-screen flex justify-center">
-      <!-- input bar -->
-      <div class="border border-gray-400 w-5/12 rounded-l-sm">
-        <input type="text" class="w-full focus:outline-none p-1.5" placeholder=" Search" v-model="searching">
-      </div>
-      <!-- search button -->
-      <button type="submit" class="w-24 h-10 bg-gray-200 rounded-r-sm border border-gray-400"> Search </button>
-    </div>
+    <search-bar @search="search"/>
 
-    <!-- thumbnail preview -->
-    <div class="h-96 w-screen bg-black flex justify-center" v-if="isShowPreview">
-      <img :src="previewSrc" alt="">
-      <div @click="this.isShowPreview=false" class="w-10 h-10 absolute bg-red-400 right-3.5 mt-3.5"></div>
-    </div>
+    <preview :isShowPreview="isShowPreview" :src="previewSrc"/>
 
     <thumbnail :thumbnails="thumbnails"/>
 
@@ -55,9 +43,14 @@
   <script src="./main.js"></script>
 
   <!-- components -->
+  
   <script src="components/thumbnail.js"></script>
+  <script src="components/searchBar.js"></script>
+  <script src="components/preview.js"></script>
 
-  <script> const mountedApp = app.mount("#app"); </script>
+  
+  <script> const mountedApp = app.mount("#app"); </script>  
 </body>
+
 
 </html>

@@ -1,5 +1,6 @@
+console.log('thumbnail')
 app.component("thumbnail", {
-  template: `
+  template: /*html*/`
     <!-- thumbnails -->
     <div class="flex flex-row flex-wrap w-screen justify-center">
       <!-- thumbnail -->
