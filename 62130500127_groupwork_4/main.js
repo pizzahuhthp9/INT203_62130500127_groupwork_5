@@ -1,5 +1,4 @@
-console.log('vue is running');
-const app = {
+const app = Vue.createApp({
   data() {
     return {
       thumbnails: [
@@ -121,5 +120,4 @@ const app = {
   beforeUpdate() {
     this.search(this.searching);
   },
-};
-Vue.createApp(app).mount("#app");
+});
