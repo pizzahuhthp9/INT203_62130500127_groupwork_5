@@ -25,11 +25,11 @@
 <body class="bg-gray"> 
   <div id="app">
 
-    <search-bar @search="search"/>
+    <search-bar @search="search"></search-bar>
 
-    <preview :isShowPreview="isShowPreview" :src="previewSrc"/>
+    <preview :isShowPreview="isShowPreview" :src="previewSrc"></preview>
 
-    <thumbnail :thumbnails="thumbnails"/>
+    <thumbnail :thumbnails="thumbnails"></thumbnail>
 
     <!-- no photo  -->
     <div v-if="isNoPhoto" class="flex justify-center">
