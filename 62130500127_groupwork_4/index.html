@@ -29,7 +29,7 @@
 
     <preview :isShowPreview="isShowPreview" :src="previewSrc"></preview>
 
-    <thumbnail :thumbnails="thumbnails"></thumbnail>
+    <thumbnail :thumbnails="thumbnails" @show="show"></thumbnail>
 
     <!-- no photo  -->
     <div v-if="isNoPhoto" class="flex justify-center">

@@ -21,4 +21,10 @@ app.component("thumbnail", {
   props: {
       thumbnails: Array
   },
+  methods: {
+    show(thumbnail){
+      console.log(thumbnail)
+      this.$emit("show", thumbnail);
+    }
+  },
 });
