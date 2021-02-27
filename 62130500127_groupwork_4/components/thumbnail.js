@@ -1,4 +1,3 @@
-console.log('thumbnail')
 app.component("thumbnail", {
   template: /*html*/`
     <!-- thumbnails -->
@@ -19,11 +18,10 @@ app.component("thumbnail", {
     </div>
 `,
   props: {
-      thumbnails: Array
+      thumbnails: Array,
   },
   methods: {
     show(thumbnail){
-      console.log(thumbnail)
       this.$emit("show", thumbnail);
     }
   },

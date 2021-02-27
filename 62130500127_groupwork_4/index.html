@@ -26,8 +26,10 @@
   <div id="app">
 
     <search-bar @search="search"></search-bar>
-
-    <preview :isShowPreview="isShowPreview" :src="previewSrc"></preview>
+    <div v-show="isShowPreview">
+      <preview :src="previewSrc" @close="closePreview"></preview>
+    </div>
+    
 
     <thumbnail :thumbnails="thumbnails" @show="show"></thumbnail>
 
@@ -38,6 +40,7 @@
   </div>
 
   
+  
 
   <!-- my main.js -->
   <script src="./main.js"></script>
@@ -47,9 +50,7 @@
   <script src="components/thumbnail.js"></script>
   <script src="components/searchBar.js"></script>
   <script src="components/preview.js"></script>
-
-  
-  <script> const mountedApp = app.mount("#app"); </script>  
+  <script> const mountedApp = app.mount("#app"); </script>
 </body>
 
 

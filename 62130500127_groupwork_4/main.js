@@ -7,114 +7,121 @@ const app = Vue.createApp({
           src: "images/1.jpg",
           like: 123,
           toggle: false,
-          isShow: true
+          isShow: true,
         },
         {
           name: "B Pic",
           src: "images/1.jpg",
           like: 0,
           toggle: false,
-          isShow: true
+          isShow: true,
         },
         {
           name: "B Pic",
           src: "images/1.jpg",
           like: 999,
           toggle: true,
-          isShow: true
+          isShow: true,
         },
         {
           name: "B Pic",
           src: "images/1.jpg",
           like: 1000,
           toggle: true,
-          isShow: true
+          isShow: true,
         },
         {
           name: "B Pic",
           src: "images/1.jpg",
           like: 10,
           toggle: true,
-          isShow: true
+          isShow: true,
         },
         {
           name: "B Pic",
           src: "images/1.jpg",
           like: 7,
           toggle: false,
-          isShow: true
+          isShow: true,
         },
         {
           name: "B Pic",
           src: "images/1.jpg",
           like: 9,
           toggle: false,
-          isShow: true
+          isShow: true,
         },
         {
           name: "B Pic",
           src: "images/1.jpg",
           like: 285,
           toggle: true,
-          isShow: true
+          isShow: true,
         },
         {
           name: "C Pic",
           src: "images/1.jpg",
           like: 228,
           toggle: false,
-          isShow: true
+          isShow: true,
         },
         {
           name: "C Pic",
           src: "images/1.jpg",
           like: 299,
           toggle: false,
-          isShow: true
+          isShow: true,
         },
         {
           name: "C Pic",
           src: "images/1.jpg",
           like: 9999,
           toggle: false,
-          isShow: true
+          isShow: true,
         },
         {
           name: "D Pic",
           src: "images/1.jpg",
           like: 123456,
           toggle: true,
-          isShow: true
+          isShow: true,
         },
       ],
       // searching: "",
       isShowPreview: false,
       previewSrc: "",
-      isNoPhoto: false
+      isNoPhoto: false,
     };
   },
   methods: {
-    search(searching){
+    search(searching) {
       // console.log(searching)
       let photoAmout = this.thumbnails.length;
       let i = 0;
-      this.thumbnails.forEach(thumbnail => {
-        if (thumbnail.name.toLowerCase().includes(searching.toLowerCase())) {
-          thumbnail.isShow = true;
-          this.isNoPhoto = false;
-        }else{
-          thumbnail.isShow = false;
-          i++;
-        }
-      });
+      if (searching) {
+        this.thumbnails.forEach((thumbnail) => {
+          if (thumbnail.name.toLowerCase().includes(searching.toLowerCase())) {
+            thumbnail.isShow = true;
+            this.isNoPhoto = false;
+          } else {
+            thumbnail.isShow = false;
+            i++;
+          }
+        });
+      }
       if (photoAmout == i) {
         this.isNoPhoto = true;
       }
-
     },
-    show(thumbnail){
+    show(thumbnail) {
       this.isShowPreview = true;
       this.previewSrc = thumbnail.src;
+    },
+    log(message) {
+      console.log(message);
+    },
+    closePreview(data){
+      this.isShowPreview=data;
     }
   },
   beforeUpdate() {
